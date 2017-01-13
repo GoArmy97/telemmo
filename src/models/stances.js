@@ -5,24 +5,23 @@ const stances = [
     name: 'Arcane',
     emoji: ':stars:',
     classes: ['Mage'],
+    mainStat: ['dex'],
     description: 'Doubles skill casting chance',
-    buffs: player => ({
-      skillCast: player.skillCast * 2
-    }),
+    buffs: player => ({skillCast: player.skillCast * 2}),
   },
   {
     name: 'Debuff',
     emoji: ':hotsprings:',
     classes: ['Mage'],
+    mainStat: ['int'],
     description: '+30% chance to stun',
-    buffs: player => ({
-      stunChance: player.stunChance + 0.30,
-    }),
+    buffs: player => ({stunChance: player.stunChance + 0.30,}),
   },
   {
     name: 'Tank',
     emoji: ':tractor:',
     classes: ['Fighter'],
+    mainStat: ['vit'],
     description: '+70% HP',
     buffs: player => ({
       hp: Math.floor(player.hp * 1.70),
@@ -33,6 +32,7 @@ const stances = [
     name: 'Berserk',
     emoji: ':triumph:',
     classes: ['Fighter'],
+    mainStat: ['str'],
     description: '-75% HP, +100% ATK, +50% Attack Speed',
     buffs: player => ({
       hp: Math.floor(player.hp * 0.25),
@@ -45,6 +45,7 @@ const stances = [
     name: 'Loot',
     emoji: ':moneybag:',
     classes: ['Thief'],
+    mainStat: ['agi'],
     description: '+50% monster drop ratio',
     buffs: player => ({
       dropRatio: player.dropRatio * 1.5,
@@ -54,6 +55,7 @@ const stances = [
     name: 'Stealth',
     emoji: ':ghost:',
     classes: ['Thief'],
+    mainStat: ['str'],
     description: '+35% Attack Speed, +35% ATK, +10% dodge',
     buffs: player => ({
       aspd: player.aspd * 1.35,
@@ -65,6 +67,7 @@ const stances = [
     name: 'Heretic',
     emoji: ':mortar_board:',
     classes: ['Acolyte'],
+    mainStat: ['str'],
     description: '+70% ATK',
     buffs: player => ({
       atk: player.atk * 1.7,
@@ -74,6 +77,7 @@ const stances = [
     name: 'Priest',
     emoji: ':church:',
     classes: ['Acolyte'],
+    mainStat: ['dex'],
     description: 'Doubles skill casting chance',
     buffs: player => ({
       skillCast: player.skillCast * 2
@@ -83,6 +87,7 @@ const stances = [
     name: 'Sniper',
     emoji: ':eight_pointed_black_star:',
     classes: ['Ranger'],
+    mainStat: ['agi'],
     description: '+30% ATK, +40% Attack Speed',
     buffs: player => ({
       atk: player.atk * 1.3,
@@ -93,6 +98,7 @@ const stances = [
     name: 'Trapper',
     emoji: ':fishing_pole_and_fish:',
     classes: ['Ranger'],
+    mainStat: ['dex'],
     description: '4x dodge chance',
     buffs: player => ({
       dodge: player.dodge * 4
@@ -102,6 +108,7 @@ const stances = [
     name: 'Efficient',
     emoji: ':flower_playing_cards:',
     classes: ['Merchant'],
+    mainStat: ['luk'],
     description: '+30% monster drop ratio, +20% ATK, +20% dodge',
     buffs: player => ({
       dropRatio: player.dropRatio * 1.3,
@@ -113,6 +120,7 @@ const stances = [
     name: 'Breaker',
     emoji: ':eight_spoked_asterisk:',
     classes: ['Merchant'],
+    mainStat: ['dex'],
     description: '+30% ATK, +20% chance to stun.',
     buffs: player => ({
       atk: player.atk * 1.3,
