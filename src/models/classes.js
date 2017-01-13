@@ -20,7 +20,7 @@ const classes = [
     {
       className: 'Acolyte',
       classEmoji: ':sparkling_heart:',
-      mainStats: ['int', 'dex'],
+      mainStats: ['str', 'dex'],
       stances: ['Heretic', 'Priest']
     },
     {
