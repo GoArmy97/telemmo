@@ -6,7 +6,7 @@ const skills = [
     stance: 'Arcane',
     influence: 10,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.mAtk * 2
+      const damage = attacker.mAtk * 2 
       defender.hp = Math.max(defender.hp - damage, 0)
       return damage
     },
@@ -16,7 +16,7 @@ const skills = [
     stance: 'Arcane',
     influence: 5,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.mAtk * 3
+      const damage = attacker.mAtk * 3 
       defender.hp = Math.max(defender.hp - damage, 0)
       modifiers.push('STUN')
       defender.stunned = true
@@ -28,7 +28,7 @@ const skills = [
     stance: 'Arcane',
     influence: 3,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.mAtk * 6
+      const damage = attacker.mAtk * 6 
       defender.hp = Math.max(defender.hp - damage, 0)
       return damage
     },
@@ -38,7 +38,7 @@ const skills = [
     stance: 'Arcane',
     influence: 1,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.mAtk * 12
+      const damage = attacker.mAtk * 12 
       defender.hp = Math.max(defender.hp - damage, 0)
       return damage
     },
@@ -48,7 +48,7 @@ const skills = [
     stance: 'Debuff',
     influence: 10,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.mAtk * 2
+      const damage = attacker.mAtk * 2 
       defender.hp = Math.max(defender.hp - damage, 0)
       defender.aspd = defender.aspd * 0.8
       modifiers.push('SLOW')
@@ -70,7 +70,7 @@ const skills = [
     stance: 'Debuff',
     influence: 3,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.mAtk * 8
+      const damage = attacker.mAtk * 8 
       defender.hp = Math.max(defender.hp - damage, 0)
       defender.aspd = defender.aspd * 0.8
       modifiers.push('SLOW')
@@ -82,7 +82,7 @@ const skills = [
     stance: 'Debuff',
     influence: 1,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.mAtk * 10
+      const damage = attacker.mAtk * 10 
       defender.hp = Math.max(defender.hp - damage, 0)
       defender.aspd = defender.aspd * 0.8
       modifiers.push('SLOW')
@@ -96,7 +96,7 @@ const skills = [
     stance: 'Tank',
     influence: 10,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.mAtk * 2
+      const damage = attacker.mAtk * 2 
       defender.hp = Math.max(defender.hp - damage, 0)
       attacker.def = attacker.def * 1.2
       modifiers.push('+DEF')
@@ -108,7 +108,7 @@ const skills = [
     stance: 'Tank',
     influence: 5,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.mAtk * 3
+      const damage = attacker.mAtk * 3 
       defender.hp = Math.max(defender.hp - damage, 0)
       modifiers.push('STUN')
       defender.stunned = true
@@ -132,7 +132,7 @@ const skills = [
     stance: 'Tank',
     influence: 1,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.vit
+      const damage = attacker.vit + Math.floor(attacker.stance.mainStat / 4)
       defender.hp = Math.max(defender.hp - damage, 0)
       return damage
     },
@@ -154,7 +154,8 @@ const skills = [
     stance: 'Berserk',
     influence: 1,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.atk/5
+      const damage = attacker.atk*2 + Math.floor(attacker.stance.mainStat / 4)
+// Changed damage on whirlwind to reflect a more powerful skill. Mages have pyroblast. If a skill only has 5% chance to cast when you cast at all, It should be powerful.
       defender.hp = Math.max(defender.hp - damage, 0)
       return damage
     },
@@ -208,7 +209,7 @@ const skills = [
     stance: 'Stealth',
     influence: 1,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.atk
+      const damage = attacker.atk + Math.floor(attacker.stance.mainStat / 4)
       defender.hp = Math.max(defender.hp - damage, 0)
       return damage
     },
@@ -242,7 +243,7 @@ const skills = [
     stance: 'Heretic',
     influence: 1,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.atk
+      const damage = attacker.atk + Math.floor(attacker.stance.mainStat / 4)
       defender.hp = Math.max(defender.hp - damage, 0)
       return damage
     },
@@ -295,7 +296,7 @@ const skills = [
     stance: 'Sniper',
     influence: 10,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.dex / 10
+      const damage = attacker.dex / 10 + Math.floor(attacker.stance.mainStat / 4)
       defender.hp = Math.max(defender.hp - damage, 0)
       return damage
     },
@@ -327,7 +328,7 @@ const skills = [
     stance: 'Sniper',
     influence: 1,
     action: (attacker, defender, modifiers) => {
-      const damage = attacker.dex / 2
+      const damage = attacker.dex / 2 + Math.floor(attacker.stance.mainStat / 4)
       defender.hp = Math.max(defender.hp - damage, 0)
       return damage
     },
