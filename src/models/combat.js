@@ -24,11 +24,13 @@ function applyBuff (buffs, stats) {
 
 function getStats (fighter) {
   return {
+    currnentStance: fighter.stance,
     maxHp: 100 + Math.floor(fighter.vit),
     hp:  100 + Math.floor(fighter.vit),
     aspd: fighter.agi * 2 + 50,
-    atk: 20 + fighter.str/4,
-    mAtk: 5 + Math.floor(fighter.int/10),
+    atk: 20 + Math.floor(fighter.str/6) + Math.floor(fighter.stance.mainStat / 4),
+    mAtk: 5 + Math.floor(fighter.int/10) + Math.floor(fighter.stance.mainStat / 8),
+//allowed primary stats to improve skills
     def: 10 + Math.floor(fighter.vit/8),
     atkVariation: Math.max(0.05, 0.3 - fighter.dex/350),
     skillCast: Math.min(0.9, 0.1 + fighter.dex/600),
