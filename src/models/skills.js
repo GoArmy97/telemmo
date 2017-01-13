@@ -2,7 +2,7 @@ const { stanceFromName } = require('./stances')
 
 const skills = [
   {
-    name: 'Arcane Missels',
+    name: 'Arcane Missiles',
     stance: 'Arcane',
     influence: 10,
     action: (attacker, defender, modifiers) => {
@@ -214,7 +214,7 @@ const skills = [
     },
   },
   {
-    name: 'Unholy Strenght',
+    name: 'Unholy Strength',
     stance: 'Heretic',
     influence: 10,
     action: (attacker, defender, modifiers) => {
