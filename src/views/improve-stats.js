@@ -6,7 +6,7 @@ module.exports = {
       keyboard: [
         ['Strength', 'Agility'],
         ['Dexterity', 'Vitality'],
-        ['Inteligence', 'Luck'],
+        ['Intelligence', 'Luck'],
       ].map(row => row.map(key => emoji.emojify(':up: ' + key)))
     }
   },
