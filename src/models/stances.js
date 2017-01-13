@@ -5,24 +5,23 @@ const stances = [
     name: 'Arcane',
     emoji: ':stars:',
     classes: ['Mage'],
+    mainStat: ['dex'],
     description: 'Doubles skill casting chance',
-    buffs: player => ({
-      skillCast: player.skillCast * 2
-    }),
+    buffs: player => ({skillCast: player.skillCast * 2}),
   },
   {
     name: 'Debuff',
     emoji: ':hotsprings:',
     classes: ['Mage'],
+    mainStat: ['int'],
     description: '+30% chance to stun',
-    buffs: player => ({
-      stunChance: player.stunChance + 0.30,
-    }),
+    buffs: player => ({stunChance: player.stunChance + 0.30,}),
   },
   {
     name: 'Tank',
     emoji: ':tractor:',
     classes: ['Fighter'],
+    mainStat: ['vit'],
     description: '+70% HP',
     buffs: player => ({
       hp: Math.floor(player.hp * 1.70),
@@ -33,6 +32,7 @@ const stances = [
     name: 'Berserk',
     emoji: ':triumph:',
     classes: ['Fighter'],
+    mainStat: ['str'],
     description: '-75% HP, +100% ATK, +50% Attack Speed',
     buffs: player => ({
       hp: Math.floor(player.hp * 0.25),
@@ -45,6 +45,7 @@ const stances = [
     name: 'Loot',
     emoji: ':moneybag:',
     classes: ['Thief'],
+    mainStat: ['dex'],
     description: '+50% monster drop ratio',
     buffs: player => ({
       dropRatio: player.dropRatio * 1.5,
